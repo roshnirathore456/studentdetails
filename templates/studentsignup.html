@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Student Signup</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+                crossorigin="anonymous"></script>
+        <style>
+           body {
+               font-family: 'Trebuchet MS', sans-serif;
+            }
+            .header{
+               margin: 5%;
+            }
+            h1{
+               margin: 0 auto;
+               width:50%;
+               text-align: center;
+            }
+            form {
+               margin: 0 30% 0 30%;
+            }
+            .btn{
+               margin:0 auto;
+               display: block;
+               border-radius: 20px;
+               background: #2fedab;
+               width: 30%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Student Signup</h1>
+        </div>
+
+        <form class="needs-validation" novalidate action="" method="post">
+            {% csrf_token %}
+            <div class="col-md-12 mb-3">
+                <label for="username">User name</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="User name" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter valid user name.
+                </div>
+            </div>
+            <div class="col-md-12 mb-3">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter valid password.
+                </div>
+            </div>
+            <div class="col-md-12 mb-3">
+                <label for="password2">Confirm password</label>
+                <input type="password" class="form-control" id="password2" name="password2" placeholder="Enter confirm password" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter valid confirm password.
+                </div>
+            </div>
+            <button class="btn" type="submit">Sign Up</button>
+        </form>
+
+        <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function() {
+              'use strict';
+              window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                  form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                      event.preventDefault();
+                      event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                  }, false);
+                });
+              }, false);
+            })();
+        </script>
+    </body>
+</html>
