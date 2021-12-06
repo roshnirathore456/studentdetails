@@ -31,12 +31,30 @@
                background: #2fedab;
                width: 30%;
             }
+            .alertmsg{
+            width: 50%;
+            margin:0 auto;
+            display: block;
+            margin-bottom: 2%;
+            }
         </style>
     </head>
     <body>
         <div class="header">
             <h1>Teachers Signup</h1>
         </div>
+
+        {% if messages %}
+            {% for message in messages %}
+
+              <div class="alert alert-warning alert-dismissible fade show alertmsg" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+
+            {% endfor %}
+         {% endif %}
+
         <form class="needs-validation" novalidate action="" method="post">
             {% csrf_token %}
             <div class="col-md-12 mb-3">
@@ -50,6 +68,16 @@
                 </div>
             </div>
             <div class="col-md-12 mb-3">
+                <label for="email">User name</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter valid email.
+                </div>
+            </div>
+            <div class="col-md-12 mb-3">
                 <label for="password">Password</label>
                 <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
                 <div class="valid-feedback">
@@ -57,16 +85,6 @@
                 </div>
                 <div class="invalid-feedback">
                     Please enter valid password.
-                </div>
-            </div>
-            <div class="col-md-12 mb-3">
-                <label for="password2">Confirm password</label>
-                <input type="password" class="form-control" id="password2" name="password2" placeholder="Enter confirm password" required>
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-                <div class="invalid-feedback">
-                    Please enter valid confirm password.
                 </div>
             </div>
             <button class="btn" type="submit">Sign Up</button>
