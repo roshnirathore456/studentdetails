@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Student Home</title>
+  <style >
+    .body {
+        background-color: #2fedab;
+        font-family: 'Trebuchet MS', sans-serif;
+    }
+    .para{
+            width: 50%;
+            margin: 25% 25% 22% 25%;
+            color: black;
+            text-align: center;
+            font-size: 30px;
+    }
+</style>
+</head>
+
+<body class="body">
+  {% include "navbar.html" %}
+  <div class="container">
+    <p class="font-weight-bold para">Student details submitted successfully.</p>
+  </div>
+</body>
+</html>

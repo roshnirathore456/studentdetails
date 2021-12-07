@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Student Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+  <style >
+    .body {
+        background-color: #2fedab;
+        font-family: 'Trebuchet MS', sans-serif;
+    }
+    .para{
+            width: 50%;
+            margin: 2% auto;
+            color: black;
+            text-align: center;
+            font-size: 30px;
+    }
+</style>
+</head>
+
+<body class="body">
+<!--  {% include "navbar.html" %}-->
+  <div class="container">
+    <p class="font-weight-bold para">Student Details</p>
+  </div>
+<div class="row justify-content-center">
+    <div class="col-auto">
+      <table class="table table-responsive table-striped">
+          <thead>
+            <tr>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Graduation</th>
+              <th scope="col">Mobile</th>
+              <th scope="col">Activity</th>
+              <th scope="col">Assigned</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for student in studentfetch %}
+                <tr>
+                  <td>{{student.firstname}}</td>
+                  <td>{{student.lastname}}</td>
+                  <td>{{student.useremail}}</td>
+                  <td>{{student.graduation}}</td>
+                  <td>{{student.phone}}</td>
+                  <td>{{student.activityname}}</td>
+                  <td>{{student.activityassigned}}</td>
+                </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+    </div>
+</div>
+</body>
+</html>

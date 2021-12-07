@@ -10,5 +10,6 @@ urlpatterns = [
     path('studentsignup', views.student_signup_view,name='studentsignup'),
     path('studentlogin', views.student_login_view,name='studentlogin'),
     path('home', views.home, name='home'),
-    path('studentdetails', views.studentdetails_view),
+    path('studentdetails', views.studentdetails_view,name='studentdetails'),
+    path('teacherfetch', views.teacher_fetch_student_details,name='teacherfetch'),
 ]
